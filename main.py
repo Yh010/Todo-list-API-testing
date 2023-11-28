@@ -9,3 +9,7 @@ todo_items = []
 def add_item(request: dict):
     todo_items.append(request["item"]) # Adding item to our todo_items list
     return {"status": "ok", "message": "Item added"} #Sending the API Response back
+
+@app.get("/")
+def get_items():
+    return {"items": todo_items} #Returning the todo_items list
